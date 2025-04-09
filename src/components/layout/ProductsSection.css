@@ -1,0 +1,950 @@
+.products-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(to bottom, #0f172a, #121a2e);
+  color: #f8fafc;
+}
+
+/* Elementos de fundo decorativos */
+.products-background-elements {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.products-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.products-circle-1 {
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, #3b82f6, #1e3a8a);
+  top: -5%;
+  right: -10%;
+  filter: blur(40px);
+  animation: float-products 15s ease-in-out infinite alternate;
+}
+
+.products-circle-2 {
+  width: 25vw;
+  height: 25vw;
+  background: radial-gradient(circle, #60a5fa, #2563eb);
+  bottom: -10%;
+  left: -5%;
+  filter: blur(60px);
+  animation: float-products 20s ease-in-out infinite alternate-reverse;
+}
+
+.products-line {
+  position: absolute;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+  height: 1px;
+  width: 100%;
+}
+
+.products-line-1 {
+  top: 25%;
+  transform: rotate(-5deg);
+}
+
+.products-line-2 {
+  bottom: 35%;
+  transform: rotate(3deg);
+}
+
+@keyframes float-products {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-20px, 20px);
+  }
+}
+
+/* Container principal */
+.products-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Título principal */
+.products-title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  background: linear-gradient(to right, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo */
+.products-subtitle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.products-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #94a3b8;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.products-subtitle-line {
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(to right, transparent, #3b82f6, transparent);
+  max-width: 100px;
+}
+
+/* Texto de introdução */
+.products-introduction {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+/* Lista de produtos */
+.products-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin: 2rem 0;
+}
+
+/* Item da lista de produtos */
+.product-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .product-list-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .product-list-item.product-odd {
+    border-left: 3px solid #3b82f6;
+  }
+  
+  .product-list-item.product-even {
+    border-right: 3px solid #3b82f6;
+  }
+}
+
+.product-list-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(10px);
+}
+
+.product-list-icon {
+  font-size: 2rem;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.1);
+  min-width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .product-list-icon {
+    margin: 0;
+  }
+}
+
+.product-list-item:hover .product-list-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.product-list-content {
+  flex: 1;
+}
+
+.product-list-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+  letter-spacing: -0.02em;
+  position: relative;
+  display: inline-block;
+}
+
+.product-list-title::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(to right, #60a5fa, transparent);
+  bottom: -0.5rem;
+  left: 0;
+}
+
+.product-list-description {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
+  max-width: 650px;
+}
+
+/* Lista de recursos */
+.product-list-features {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.features-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.features-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .features-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature-item {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.4;
+}
+
+.feature-item::before {
+  content: "•";
+  color: #60a5fa;
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* CTA dos produtos */
+.product-list-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #60a5fa;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 0.75rem 0;
+  position: relative;
+}
+
+.product-list-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #60a5fa;
+  transition: width 0.3s ease;
+}
+
+.product-list-cta:hover {
+  color: white;
+}
+
+.product-list-cta:hover::after {
+  width: 100%;
+}
+
+.arrow-icon {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.product-list-cta:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Seção de contato */
+.products-contact-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.products-contact-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.products-contact-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.products-contact-button {
+  display: inline-block;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  color: white;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.products-contact-button:hover {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* Tema claro (opcional) */
+@media (prefers-color-scheme: light) {
+  .products-section {
+    background: linear-gradient(to bottom, #f8fafc, #e2e8f0);
+    color: #0f172a;
+  }
+  
+  .products-circle-1 {
+    background: radial-gradient(circle, #bfdbfe, #93c5fd);
+  }
+  
+  .products-circle-2 {
+    background: radial-gradient(circle, #93c5fd, #60a5fa);
+  }
+  
+  .products-line {
+    background: linear-gradient(to right, transparent, rgba(15, 23, 42, 0.1), transparent);
+  }
+  
+  .products-title {
+    background: linear-gradient(to right, #1d4ed8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .products-subtitle {
+    color: #475569;
+  }
+  
+  .products-subtitle-line {
+    background: linear-gradient(to right, transparent, #2563eb, transparent);
+  }
+  
+  .products-introduction {
+    color: #334155;
+  }
+  
+  .product-list-item {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  
+  .product-list-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  .product-list-title {
+    color: #0f172a;
+  }
+  
+  .product-list-description {
+    color: #334155;
+  }
+  
+  .product-list-features {
+    background: rgba(0, 0, 0, 0.03);
+  }
+  
+  .features-title {
+    color: #0f172a;
+  }
+  
+  .feature-item {
+    color: #334155;
+  }
+  
+  .product-list-cta {
+    color: #2563eb;
+  }
+  
+  .product-list-cta:hover {
+    color: #1d4ed8;
+  }
+  
+  .product-list-cta::after {
+    background-color: #2563eb;
+  }
+  
+  .products-contact-container {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .products-contact-title {
+    color: #0f172a;
+  }
+  
+  .products-contact-description {
+    color: #334155;
+  }
+}
+
+/* Estilo para o botão CTA que parece um link */
+.product-list-cta.as-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #3b82f6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.product-list-cta.as-button:hover {
+  color: #2563eb;
+  transform: translateX(5px);
+}
+
+.product-list-cta.as-button:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Estilos para o overlay do modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilos para o modal de galeria */
+.gallery-modal {
+  position: relative;
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 20px;
+  z-index: 1001;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: auto;
+}
+
+/* Botão para fechar o modal */
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Conteúdo da galeria */
+.gallery-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .gallery-content {
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+/* Imagem em destaque */
+.gallery-featured-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+@media (min-width: 768px) {
+  .gallery-featured-image {
+    height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-featured-image {
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Área de miniaturas */
+.gallery-thumbnails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gallery-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Container de miniaturas */
+.thumbnails-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .thumbnails-container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+  }
+}
+
+/* Item de miniatura */
+.thumbnail-item {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.thumbnail-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail-item.active {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  transform: scale(1.05);
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botão de ação na galeria */
+.gallery-actions {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.gallery-cta-button {
+  display: inline-block;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2), 0 2px 4px -1px rgba(59, 130, 246, 0.1);
+}
+
+.gallery-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
+}
+
+/* Estilos para o tema claro */
+@media (prefers-color-scheme: light) {
+  .gallery-modal {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .modal-close-btn {
+    background: rgba(0, 0, 0, 0.1);
+    color: #1f2937;
+  }
+  
+  .modal-close-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  .gallery-featured-image {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .gallery-title {
+    color: #1f2937;
+  }
+  
+  .gallery-description {
+    color: #4b5563;
+  }
+}
+
+/* Botão para alternar modo tela cheia */
+.fullscreen-toggle-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+  opacity: 0;
+}
+
+.gallery-featured-image:hover .fullscreen-toggle-btn {
+  opacity: 1;
+}
+
+.fullscreen-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Overlay para o modo tela cheia */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Conteúdo do modo tela cheia */
+.fullscreen-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botão para fechar o modo tela cheia */
+.fullscreen-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-size: 1.2rem;
+}
+
+.fullscreen-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Container da imagem em tela cheia */
+.fullscreen-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+/* Imagem em tela cheia */
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Botões de navegação */
+.fullscreen-nav-btn {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 2rem;
+  font-weight: 300;
+  z-index: 10;
+}
+
+.fullscreen-prev-btn {
+  left: 2rem;
+}
+
+.fullscreen-next-btn {
+  right: 2rem;
+}
+
+.fullscreen-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Contador de imagens */
+.fullscreen-counter {
+  position: absolute;
+  bottom: 2rem;
+  color: white;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  opacity: 0.8;
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .fullscreen-nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .fullscreen-prev-btn {
+    left: 1rem;
+  }
+
+  .fullscreen-next-btn {
+    right: 1rem;
+  }
+
+  .fullscreen-image-container {
+    padding: 2rem;
+  }
+}
+
+/* Adicionar cursor de ampliação para a imagem destacada */
+.featured-image {
+  cursor: zoom-in;
+}
+
+/* Tema claro para o fullscreen */
+@media (prefers-color-scheme: light) {
+  .fullscreen-overlay {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .fullscreen-close-btn,
+  .fullscreen-nav-btn {
+    background: rgba(0, 0, 0, 0.1);
+    color: #333;
+  }
+  
+  .fullscreen-close-btn:hover,
+  .fullscreen-nav-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+  
+  .fullscreen-counter {
+    color: #333;
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* Estilos específicos para o modal de e-commerce */
+.gallery-modal[data-type="ecommerce"] .gallery-image {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-modal[data-type="ecommerce"] .gallery-image:hover {
+  transform: scale(1.02);
+}
+
+.gallery-modal[data-type="ecommerce"] .gallery-title {
+  color: #2d3748;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.gallery-modal[data-type="ecommerce"] .gallery-description {
+  color: #4a5568;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Ajustes responsivos para o modal de e-commerce */
+@media (max-width: 768px) {
+  .gallery-modal[data-type="ecommerce"] .gallery-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-modal[data-type="ecommerce"] .gallery-title {
+    font-size: 1.5rem;
+  }
+
+  .gallery-modal[data-type="ecommerce"] .gallery-description {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode para o modal de e-commerce */
+@media (prefers-color-scheme: dark) {
+  .gallery-modal[data-type="ecommerce"] .gallery-title {
+    color: #e2e8f0;
+  }
+
+  .gallery-modal[data-type="ecommerce"] .gallery-description {
+    color: #a0aec0;
+  }
+} 

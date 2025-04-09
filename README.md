@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RM Soft - Soluções Digitais Personalizadas
 
-## Getting Started
+Website institucional da RM Soft, desenvolvido com Next.js, TypeScript e TailwindCSS.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
+- Next.js 15
+- TypeScript
+- TailwindCSS
+- Framer Motion
+- React Icons
+
+## Requisitos
+
+- Node.js 18.x ou superior
+- npm ou yarn
+
+## Instalação
+
+1. Clone o repositório:
+\`\`\`bash
+git clone https://github.com/renatoDevMax/rmsoft.git
+\`\`\`
+
+2. Instale as dependências:
+\`\`\`bash
+cd rmsoft
+npm install
+\`\`\`
+
+3. Execute o projeto em desenvolvimento:
+\`\`\`bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build e Deploy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para fazer o build do projeto:
+\`\`\`bash
+npm run build
+\`\`\`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para iniciar em produção:
+\`\`\`bash
+npm start
+\`\`\`
 
-## Learn More
+## Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+- `/src/app` - Páginas e rotas da aplicação
+- `/src/components` - Componentes reutilizáveis
+- `/public` - Arquivos estáticos (imagens, vídeos, etc)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
