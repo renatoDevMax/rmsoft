@@ -1,0 +1,236 @@
+.client-sidebar {
+  width: 24rem; /* equivalente a w-96 */
+  min-height: 100vh;
+  background-color: rgb(17, 24, 39);
+  border-right: 1px solid rgba(31, 41, 55, 1);
+  overflow-y: auto;
+  background-image: linear-gradient(to bottom, rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1));
+  backdrop-filter: blur(10px);
+}
+
+.client-header {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.client-header-icon {
+  color: #60a5fa;
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+}
+
+.client-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.client-item {
+  background-color: rgba(31, 41, 55, 0.5);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(55, 65, 81, 0.5);
+  transition: all 0.3s ease;
+}
+
+.client-item:hover {
+  background-color: rgba(55, 65, 81, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.client-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.client-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  outline: none;
+}
+
+.client-content:focus-visible {
+  box-shadow: 0 0 0 2px #60a5fa;
+  border-radius: 0.25rem;
+}
+
+.client-name-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.client-status {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.client-status.active {
+  background-color: #34d399;
+}
+
+.client-status.inactive {
+  background-color: #f87171;
+}
+
+.client-name {
+  color: #f3f4f6;
+  font-weight: 500;
+}
+
+.client-details {
+  padding: 1rem;
+  background-color: rgba(31, 41, 55, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(75, 85, 99, 0.2);
+}
+
+.client-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #d1d5db;
+}
+
+.client-detail-icon {
+  color: #60a5fa;
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
+}
+
+.client-product {
+  border-top: 1px solid #374151;
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.client-product-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.client-product-name {
+  color: #e5e7eb;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.client-product-description {
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.chevron-icon {
+  color: #9ca3af;
+  transition: transform 0.3s ease;
+}
+
+.chevron-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.client-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  position: relative;
+  outline: none;
+  margin-left: 0.5rem;
+}
+
+.client-check:hover {
+  color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+.client-check.checked {
+  color: #10b981; /* Verde elegante */
+  filter: drop-shadow(0 0 3px rgba(16, 185, 129, 0.5));
+}
+
+.client-check.checked:hover {
+  color: #34d399;
+}
+
+.client-checked {
+  background: linear-gradient(to right, rgba(16, 185, 129, 0.1), transparent);
+  border-left: 3px solid #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.08);
+  transition: all 0.3s ease;
+}
+
+.client-checked .client-name {
+  color: #10b981;
+  font-weight: 500;
+}
+
+/* Animação para o check quando clicado */
+@keyframes check-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.client-check.checked svg {
+  animation: check-pulse 0.3s ease-in-out;
+}
+
+/* Ajuste para o dark mode */
+@media (prefers-color-scheme: light) {
+  .client-check {
+    color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .client-check:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .client-check.checked {
+    color: #059669;
+  }
+  
+  .client-check.checked:hover {
+    color: #047857;
+  }
+  
+  .client-checked {
+    background: linear-gradient(to right, rgba(16, 185, 129, 0.05), transparent);
+    border-left: 3px solid #059669;
+  }
+  
+  .client-checked .client-name {
+    color: #059669;
+  }
+} 
